@@ -4,10 +4,10 @@ namespace SimpleStudentManagementProject_CSharpProject1
 {
     internal class Program
     {
-        static double[] marks = new double[4];
-        static int[] Ages = new int[4];
-        static string[] names = new string[4];
-        static DateTime[] dates = new DateTime[4];
+        static double[] marks = new double[10];
+        static int[] Ages = new int[10];
+        static string[] names = new string[10];
+        static DateTime[] dates = new DateTime[10];
         static int StudentCounter = 0;
 
         static void Main(string[] args)
@@ -87,6 +87,21 @@ namespace SimpleStudentManagementProject_CSharpProject1
 
                 Console.WriteLine("Enter Student Mark: ");
                 StudentMark = double.Parse(Console.ReadLine());
+                for (int j = 0; StudentMark < 0 && StudentMark>100; j++)
+                {
+                    if (21 > StudentAge)
+                    {
+                        Console.WriteLine("Invalid Mark!");
+                        Console.WriteLine("Enter Student Mark Again (0-100):  ");
+                        StudentAge = int.Parse(Console.ReadLine());
+                        marks[i] = StudentMark;
+                    }
+                    else
+                    {
+                        marks[i] = StudentMark;
+                    }
+                }
+
                 marks[i] = StudentMark;
 
 
@@ -168,6 +183,7 @@ namespace SimpleStudentManagementProject_CSharpProject1
                 SumOfMarks += marks[i];
             }
             ClassAverage = SumOfMarks / StudentCounter;
+            ClassAverage = Math.Round(ClassAverage, 2);
             Console.WriteLine($"Class Average: {ClassAverage}");
 
         }
@@ -250,18 +266,18 @@ namespace SimpleStudentManagementProject_CSharpProject1
             int index;
             string StudentName;
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < StudentCounter; i++)
             {
                 Console.WriteLine("Enter Student Name:");
                 StudentName = Console.ReadLine();
                 StudentName = StudentName.ToUpper();
 
-                // Find the index of the student in the array
+                
                 index = Array.IndexOf(names, StudentName);
 
                 if (index != -1)
                 {
-                    // Shift all elements to the left to remove the record
+                    
                     for (int j = index; j < StudentCounter - 1; j++)
                     {
                         names[j] = names[j + 1];
@@ -270,16 +286,20 @@ namespace SimpleStudentManagementProject_CSharpProject1
                         dates[j] = dates[j + 1];
                     }
 
-                    // Clear the last element in the array
+                   
                     names[StudentCounter - 1] = null;
                     Ages[StudentCounter - 1] = 0;
                     marks[StudentCounter - 1] = 0;
                     dates[StudentCounter - 1] = DateTime.MinValue;
 
-                    // Decrement the StudentCounter to reflect the reduced number of records
+                    
                     StudentCounter--;
 
                     Console.WriteLine("Student Record Deleted Successfully!");
+                    for (int k = 0; k < StudentCounter; k++)
+                    {
+                        Console.WriteLine($"{k}: Name of Student: {names[k]} , Student Age: {Ages[k]} , Student Mark: {marks[k]} , Student Enrollment Date: {dates[k]} \n");
+                    }
                 }
                 else
                 {
