@@ -278,13 +278,6 @@ namespace SimpleStudentManagementProject_CSharpProject1
                 if (index != -1)
                 {
                     
-                    
-
-                   
-                    names[StudentCounter - 1] = null;
-                    Ages[StudentCounter - 1] = 0;
-                    marks[StudentCounter - 1] = 0;
-                    dates[StudentCounter - 1] = DateTime.MinValue;
                     for (int j = index; j < StudentCounter - 1; j++)
                     {
                         names[j] = names[j + 1];
