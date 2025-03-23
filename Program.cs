@@ -55,71 +55,74 @@ namespace SimpleStudentManagementProject_CSharpProject1
             double StudentMark = 0;
             DateTime StudentEnDate = DateTime.Now;
 
-
-            Console.WriteLine("\n <--------------- Enter Student Data --------------->");
-
-
-            for (int i = StudentCounter; i < names.Length; i++)
-            {
-                Console.WriteLine("Enter Student Name: ");
-                StudentName = Console.ReadLine();
-                names[i] = StudentName;
-                names[i] = names[i].ToUpper();
-
-                Console.WriteLine("Enter Student Age:  ");
-                StudentAge = int.Parse(Console.ReadLine());
-                for (int j = 0; StudentAge < 21; j++)
-                {
-                    if (21 > StudentAge)
-                    {
-                        Console.WriteLine("Invalid Age!");
-                        Console.WriteLine("Enter Student Age Again (More Than 21):  ");
-                        StudentAge = int.Parse(Console.ReadLine());
-                        Ages[i] = StudentAge;
-                    }
-                    else
-                    {
-                        Ages[i] = StudentAge;
-                    }
-                }
-
-                Ages[i] = StudentAge;
-
-                Console.WriteLine("Enter Student Mark: ");
-                StudentMark = double.Parse(Console.ReadLine());
-                for (int j = 0; StudentMark < 0 && StudentMark>100; j++)
-                {
-                    if (21 > StudentAge)
-                    {
-                        Console.WriteLine("Invalid Mark!");
-                        Console.WriteLine("Enter Student Mark Again (0-100):  ");
-                        StudentAge = int.Parse(Console.ReadLine());
-                        marks[i] = StudentMark;
-                    }
-                    else
-                    {
-                        marks[i] = StudentMark;
-                    }
-                }
-
-                marks[i] = StudentMark;
-
-
-                dates[i] = StudentEnDate;
-
-                StudentCounter++;
-
-                Console.WriteLine($"Name of Student: {names[i]} , Student Age: {Ages[i]} , Student Mark: {marks[i]} , Student Enrollment Date: {dates[i]} \n");
-
-                break;
-
-            }
-
-
-            if (StudentCounter == 4)
+            if (StudentCounter == 10)
             {
                 Console.WriteLine("Array is Full! You can't add more students.");
+                
             }
+            else
+            {
+                Console.WriteLine("\n <--------------- Enter Student Data --------------->");
+
+
+                for (int i = StudentCounter; i < names.Length; i++)
+                {
+                    Console.WriteLine("Enter Student Name: ");
+                    StudentName = Console.ReadLine();
+                    names[i] = StudentName;
+                    names[i] = names[i].ToLower();
+
+                    Console.WriteLine("Enter Student Age:  ");
+                    StudentAge = int.Parse(Console.ReadLine());
+                    for (int j = 0; StudentAge < 21; j++)
+                    {
+                        if (21 > StudentAge)
+                        {
+                            Console.WriteLine("Invalid Age!");
+                            Console.WriteLine("Enter Student Age Again (More Than 21):  ");
+                            StudentAge = int.Parse(Console.ReadLine());
+                            Ages[i] = StudentAge;
+                        }
+                        else
+                        {
+                            Ages[i] = StudentAge;
+                        }
+                    }
+
+                    Ages[i] = StudentAge;
+
+                    Console.WriteLine("Enter Student Mark: ");
+                    StudentMark = double.Parse(Console.ReadLine());
+                    for (int j = 0; StudentMark < 0 && StudentMark > 100; j++)
+                    {
+                        if (21 > StudentAge)
+                        {
+                            Console.WriteLine("Invalid Mark!");
+                            Console.WriteLine("Enter Student Mark Again (0-100):  ");
+                            StudentAge = int.Parse(Console.ReadLine());
+                            marks[i] = StudentMark;
+                        }
+                        else
+                        {
+                            marks[i] = StudentMark;
+                        }
+                    }
+
+                    marks[i] = StudentMark;
+
+
+                    dates[i] = StudentEnDate;
+
+                    StudentCounter++;
+
+                    Console.WriteLine($"Name of Student: {names[i]} , Student Age: {Ages[i]} , Student Mark: {marks[i]} , Student Enrollment Date: {dates[i]} \n");
+
+                    break;
+
+                }
+
+            }
+            
 
             Console.WriteLine("(------ Press Enter To Go Back To MENU ------)");
 
@@ -151,18 +154,19 @@ namespace SimpleStudentManagementProject_CSharpProject1
         {
             int index;
             string StudentName;
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < StudentCounter; i++)
             {
 
 
                 Console.WriteLine("Enter Student Name:");
                 StudentName = Console.ReadLine();
-                StudentName = StudentName.ToUpper();
+                StudentName = StudentName.ToLower();
 
                 index = Array.IndexOf(names, StudentName);
                 if (index != -1)
                 {
                     Console.WriteLine($"Position: {index} , Name of Student: {names[index]} , Student Age: {Ages[index]} , Student Mark: {marks[index]} , Student Enrollment Date: {dates[index]} \n");
+
                 }
                 else
                 {
@@ -195,24 +199,25 @@ namespace SimpleStudentManagementProject_CSharpProject1
         {
 
             double top = 0;
+            int index = 0;
 
             for (int i = 0; i < StudentCounter; i++)
             {
                 if (marks[i] > top)
                 {
                     top = marks[i];
+                    index = i;
                 }
-                else
-                {
-                    top = top;
-                }
+
 
 
             }
-            int index = Array.IndexOf(marks, top);
+             //index = Array.IndexOf(marks, top);
 
             Console.WriteLine($"Top Performing Student: {names[index]} , Student Age: {Ages[index]} , Student Mark: {marks[index]} , Student Enrollment Date: {dates[index]} \n");
         }
+
+
         /* -------------------------- 6. Sort Students By Marks  -------------------*/
 
         static void SortStudentsByMarks()
@@ -270,7 +275,7 @@ namespace SimpleStudentManagementProject_CSharpProject1
             {
                 Console.WriteLine("Enter Student Name:");
                 StudentName = Console.ReadLine();
-                StudentName = StudentName.ToUpper();
+                StudentName = StudentName.ToLower();
 
                 
                 index = Array.IndexOf(names, StudentName);
