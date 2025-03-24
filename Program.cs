@@ -49,8 +49,7 @@ namespace SimpleStudentManagementProject_CSharpProject1
 
         }
 
-        /* -------------------------- 1. Add New Student  -------------------*/
-        
+        /* -------------------------- 1. Add New Student  --------------------------*/
         static void AddNewStudent()
         {
             //Declearing Variables
@@ -143,10 +142,7 @@ namespace SimpleStudentManagementProject_CSharpProject1
         }
 
 
-
-
-        /* -------------------------- 2. View All Students  -------------------*/
-
+        /* -------------------------- 2. View All Students  --------------------------*/
         static void ViewAllStudents()
         {
             Console.WriteLine("\n*------  List of All Students  ------*\n");
@@ -161,8 +157,7 @@ namespace SimpleStudentManagementProject_CSharpProject1
         }
 
 
-        /* -------------------------- 3. Find Student By Name   -------------------*/
-
+        /* -------------------------- 3. Find Student By Name   --------------------------*/
         static void FindStudentByName()
         {
             //Declearing Variables
@@ -193,8 +188,8 @@ namespace SimpleStudentManagementProject_CSharpProject1
             }
         }
 
-        /* -------------------------- 4. Calculate Class Average  -------------------*/
 
+        /* -------------------------- 4. Calculate Class Average  --------------------------*/
         static void CalculateClassAverage()
         {
             //Declearing Variables
@@ -214,8 +209,7 @@ namespace SimpleStudentManagementProject_CSharpProject1
         }
 
 
-        /* -------------------------- 5. Find Top Performing Student  -------------------*/
-
+        /* -------------------------- 5. Find Top Performing Student  --------------------------*/
         static void FindTopPerformingStudent()
         {
             //Declearing Variables
@@ -240,8 +234,7 @@ namespace SimpleStudentManagementProject_CSharpProject1
         }
 
 
-        /* -------------------------- 6. Sort Students By Marks  -------------------*/
-
+        /* -------------------------- 6. Sort Students By Marks  --------------------------*/
         static void SortStudentsByMarks()
         {
             //Sorting the students by marks
@@ -290,9 +283,7 @@ namespace SimpleStudentManagementProject_CSharpProject1
         }
 
 
-
-        /* -------------------------- 7. Delete Student Record -------------------*/
-
+        /* -------------------------- 7. Delete Student Record --------------------------*/
         static void DeleteStudentRecord()
         {
             //Declearing Variables
